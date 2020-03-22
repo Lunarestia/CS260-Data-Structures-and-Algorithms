@@ -1,0 +1,143 @@
+The focus of these problems will be working with information extracted from a 
+municipal government data feed containing bids submitted for auction of property.
+The data set is provided in two comma-separated files:
+
+  1. eBid_Monthly_Sales.csv (larger set of 17,937 bids)
+  2. eBid_Monthly_Sales_Dec_2016.csv (smaller set of 179 bids)
+
+This assignment is designed to explore hashing algorithms by implementing a
+hash with chaining of collisions for bids loaded from a CSV file.
+
+We provide a starter console program that uses a menu to enable testing of 
+the sort logic you will complete. It also allows you to pass in the path
+to the bids CSV file to be loaded, enabling you to try both files.
+In this version the following menu is presented when the program is run:
+
+   Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Find Bid
+      4. Remove Bid
+      9. Exit
+   Enter choice:  
+
+The HashTable.cpp program is partially completed - it contains empty methods
+representing the programming interface used to interact with a hash table.
+You will need to add logic to the methods to implement the necessary behavior.
+Here is the public API for LinkedList that you have to complete:
+
+  public:
+    HashTable();
+    virtual ~HashTable();
+    void Insert(Bid bid);
+    void PrintAll();
+    void Remove(string bidId);
+    Bid Search(string bidId);
+
+Begin by creating a new C++ Project with a Project Type of "Hello World C++ Project".
+Name the project 'HashTable' and click Finish. This will create a simple HashTable.cpp 
+source file under the src directory. You can then download the starter program and copy 
+the files to the src directory, replacing the existing auto-generated one. Remember to
+right-click on the project in the Project Explorer pane on the left and 'Refresh'
+the project so it adds all the new files to the src folder underneath.
+
+You will need to perform the following steps to complete this activity:
+
+(1): Define structures to hold bids
+     You may choose either an array or a vector.
+
+(2): Initialize the structures used to hold bids
+
+(3): Implement logic to free storage when class is destroyed
+
+(4): Implement logic to calculate a hash value
+     Use the bid id as the source for calculating the key
+
+(5): Implement logic to insert a bid
+     Be sure to check for key collisions and use the chaining
+     technique with a linked list to store the additional bids
+
+(6): Implement logic to print all bids
+
+(7): Implement logic to remove a bid
+
+(8): Implement logic to search for and return a bid
+
+Hint: Lab2-2 and Lab4-2 both used vectors for their storage and Lab3-3 used a
+      Node structure for implementing a linked list. 
+
+Here is sample output from running the completed program, with dashed lines to 
+illustrate the separate activities:
+
+    > ./Lab5-2 ~/Downloads/eBid_Monthly_Sales_Dec_2016.csv
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Find Bid
+      4. Remove Bid
+      9. Exit
+    Enter choice: 1
+    Loading CSV file /Users/john/Downloads/eBid_Monthly_Sales_Dec_2016.csv
+    179 bids read
+    time: 3069 clock ticks
+    time: 0.003069 seconds
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Find Bid
+      4. Remove Bid
+      9. Exit
+    Enter choice: 2
+    Key 2: 98094 | Credenza | 57 | General Fund
+        2: 98273 | Nike Tennis Shoes Size: 11.5 | 84 | Enterprise
+    Key 5: 98276 | Nike Tennis Shoes Size: 11.5 | 83.99 | Enterprise
+    Key 8: 98279 | Nike Tennis Shoes Size: 11 | 51.57 | Enterprise
+    Key 10: 98102 | Battery Cart | 42 | Enterprise
+    Key 12: 98104 | 3 Ticket Booths | 395.01 | Enterprise
+        12: 98283 | Jordan Tennis Shoes Size: 11 | 160 | Enterprise
+    Key 13: 98105 | 2 PS4 Games | 11 | Enterprise
+        13: 98284 | Jordan Tennis Shoes Size: 11 | 89.01 | Enterprise
+       ...
+       ...
+    Key 176: 98268 | Dayton Pallet Jack | 78.85 | Enterprise
+    Key 177: 98269 | 5 Extron Control Systems | 25 | General Fund
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Find Bid
+      4. Remove Bid
+      9. Exit
+    Enter choice: 3
+    98109: Whirlpool Washer & Dryer | 225.46 | Enterprise
+    time: 59 clock ticks
+    time: 5.9e-05 seconds
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Find Bid
+      4. Remove Bid
+      9. Exit
+    Enter choice: 4
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Find Bid
+      4. Remove Bid
+      9. Exit
+    Enter choice: 3
+    Bid Id 98109 not found.
+    time: 12 clock ticks
+    time: 1.2e-05 seconds
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Find Bid
+      4. Remove Bid
+      9. Exit
+    Enter choice: 9
+    Good bye.
