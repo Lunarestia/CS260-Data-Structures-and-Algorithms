@@ -1,0 +1,101 @@
+The focus of these problems will be working with information extracted from a 
+municipal government data feed containing bids submitted for auction of property.
+The data set is provided in two comma-separated files:
+
+  1. eBid_Monthly_Sales.csv (larger set of 17,937 bids)
+  2. eBid_Monthly_Sales_Dec_2016.csv (smaller set of 179 bids)
+
+This assignment is designed to explore sorting algorithms by implementing a
+selection sort and quicksort of a vector of bids loaded from a CSV file.
+
+We provide a starter console program that uses a menu to enable testing of 
+the sort logic you will complete. It also allows you to pass in the path
+to the bids CSV file to be loaded, enabling you to try both files.
+In this version the following menu is presented when the program is run:
+
+  Menu:
+    1. Load Bids
+    2. Display All Bids
+    3. Selection Sort All Bids
+    4. Quick Sort All Bids
+    9. Exit
+  Enter choice:  
+
+Begin by creating a new C++ Project with a Project Type of "Hello World C++ Project".
+Name the project 'VectorSorting' and click Finish. This will create a simple VectorSorting.cpp 
+source file under the src directory. You can then download the starter program and copy 
+the files to the src directory, replacing the existing auto-generated one. Remember to
+right-click on the project in the Project Explorer pane on the left and 'Refresh'
+the project so it adds all the new files to the src folder underneath.
+
+You will need to perform the following steps to complete this activity:
+
+(1a): Implement the selection sort logic using bid.title
+(1b): Invoke the selection sort and report timing results
+
+(2a): Implement the quicksort logic using bid.title
+      Hint: You will need two functions to accomplish this.
+(2b): Invoke the quick sort and report timing results
+
+Hint: Passing a vector to a function means the *address* of the start of the
+      vector is passed so your function argument should be: 'vector<Bid>& bids'.
+      Notice the ampersand which is the 'address of' operator in C++.
+
+Here is sample output from running the completed program, with dashed lines to 
+illustrate the separate activities:
+
+> ./Lab4-2 ~/Downloads/eBid_Monthly_Sales.csv
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Selection Sort All Bids
+      4. Quick Sort All Bids
+      9. Exit
+    Enter choice: 1
+    Loading CSV file ~/Downloads/eBid_Monthly_Sales.csv
+    17937 bids read
+    time: 173945 clock ticks
+    time: 0.173945 seconds
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Selection Sort All Bids
+      4. Quick Sort All Bids
+      9. Exit
+    Enter choice: 3
+    17937 bids sorted
+    time: 10623604 clock ticks
+    time: 10.6236 seconds
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Selection Sort All Bids
+      4. Quick Sort All Bids
+      9. Exit
+    Enter choice: 1
+    Loading CSV file ~/Downloads/eBid_Monthly_Sales.csv
+    17937 bids read
+    time: 174985 clock ticks
+    time: 0.174985 seconds
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Selection Sort All Bids
+      4. Quick Sort All Bids
+      9. Exit
+    Enter choice: 3
+    17937 bids sorted
+    time: 47964 clock ticks
+    time: 0.047964 seconds
+-----
+    Menu:
+      1. Load Bids
+      2. Display All Bids
+      3. Selection Sort All Bids
+      4. Quick Sort All Bids
+      9. Exit
+      Enter choice: 9
+      Good bye.
