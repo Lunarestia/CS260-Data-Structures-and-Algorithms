@@ -1,0 +1,147 @@
+The focus of these problems will be working with information extracted from a 
+municipal government data feed containing bids submitted for auction of property.
+The data set is provided in two comma-separated files:
+
+  1. eBid_Monthly_Sales.csv (larger set of 17,937 bids)
+  2. eBid_Monthly_Sales_Dec_2016.csv (smaller set of 179 bids)
+
+This assignment is designed to explore linked lists so you will implement a singly 
+linked-list to hold a collection of bids loaded from a CSV file. We will build a 
+simple console program that uses a menu to enable testing of the logic you will 
+complete. In this version the following menu is presented when the program is run:
+
+  Menu:
+    1. Enter a Bid
+    2. Load Bids
+    3. Display All Bids
+    4. Find Bid
+    5. Remove Bid
+    9. Exit
+  Enter choice:  
+
+The LinkedList.cpp program is partially completed - it contains empty methods
+representing the programming interface used to interact with the linked list.
+You will need to add logic to the methods to implement the necessary behavior.
+Here is the public API for LinkedList that you have to complete:
+
+  public:
+      LinkedList();
+      virtual ~LinkedList();
+      void Append(Bid bid);
+      void Prepend(Bid bid);
+      void PrintList();
+      void Remove(string bidId);
+      Bid Search(string bidId);
+      int Size();
+
+Begin by creating a new C++ Project with a Project Type of "Hello World C++ Project".
+Name the project 'LinkedList' and click Finish. This will create a simple LinkedList.cpp 
+source file under the src directory. You can then download the starter program and copy 
+the files to the src directory, replacing the existing auto-generated one. Remember to
+right-click on the project in the Project Explorer pane on the left and 'Refresh'
+the project so it adds all the new files to the src folder underneath.
+
+You will need to perform the following steps to complete this activity:
+
+(1): Internal structure for list entries, housekeeping variables.
+     Create the structure, internal to the class, that will hold
+     the bid entries. Consider what other variables are needed
+     to help manage the list.
+
+(2): Initialize housekeeping variables.
+     Remember to initialize the housekeeping variables in the
+     constructor.
+
+(3): Implement append logic.
+     Create logic to append a bid to the end of the list.
+
+(4): Implement prepend logic.
+     Create logic to prepend a bid to the front of the list.
+
+(5): Implement print logic.
+     Create logic to print all the bid entries in the list
+     to the console.
+
+(6): Implement remove logic.
+     Create logic to remove the requested bid using the
+     bid Id passed in.
+
+(7): Implement search logic.
+     Create logic to search for the requested bid using the
+     bid Id passed in. Return the bid structure if found
+     or an empty bid structure if not found.
+
+Here is sample output from running the completed program, with dashed lines to 
+illustrate the separate activities:
+
+  Menu:
+    1. Enter a Bid
+    2. Load Bids
+    3. Display All Bids
+    4. Find Bid
+    5. Remove Bid
+    9. Exit
+  Enter choice: 2
+  Loading CSV file ~/Downloads/eBid_Monthly_Sales_Dec_2016.csv
+  179 bids read
+  time: 2946 clock ticks
+  time: 2.946 seconds
+---
+  Menu:
+    1. Enter a Bid
+    2. Load Bids
+    3. Display All Bids
+    4. Find Bid
+    5. Remove Bid
+    9. Exit
+  Enter choice: 3
+  Hoover Steam Vac | 27 | Enterprise
+  Table | 6 | General Fund
+     ...
+     ...
+  5 Chairs | 19 | General Fund
+  2 Chairs | 20 | General Fund
+  Chair | 71.88 | General Fund
+---
+  Menu:
+    1. Enter a Bid
+    2. Load Bids
+    3. Display All Bids
+    4. Find Bid
+    5. Remove Bid
+    9. Exit
+  Enter choice: 4
+  98109: Whirlpool Washer & Dryer | 225.46 | Enterprise
+  time: 47 clock ticks
+  time: .0047 seconds
+---
+  Menu:
+    1. Enter a Bid
+    2. Load Bids
+    3. Display All Bids
+    4. Find Bid
+    5. Remove Bid
+    9. Exit
+  Enter choice: 5
+---
+  Menu:
+    1. Enter a Bid
+    2. Load Bids
+    3. Display All Bids
+    4. Find Bid
+    5. Remove Bid
+    9. Exit
+  Enter choice: 4
+  Bid Id 98109 not found.
+  time: 23 clock ticks
+  time: .0023 seconds
+---
+  Menu:
+    1. Enter a Bid
+    2. Load Bids
+    3. Display All Bids
+    4. Find Bid
+    5. Remove Bid
+    9. Exit
+  Enter choice: 9
+  Good bye.
