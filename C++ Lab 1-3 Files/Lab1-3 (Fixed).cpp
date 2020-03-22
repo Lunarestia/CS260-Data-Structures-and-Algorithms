@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : Lab1-3.cpp
-// Author      : Luna Saccoia
+// Author      : Luna
 // Version     : 1.0
 // Copyright   : Copyright © 2017 SNHU COCE
 // Description : Lab 1-3 Up to Speed in C++ CS-260
